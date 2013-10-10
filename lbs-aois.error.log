@@ -1,0 +1,4 @@
+2013-09-06 02:39:34 [ERROR] com.baidu.lbs.aois.Aois.main(Aois.java:72) : mysql的limit值不能小于或等于0 start:0,end:1000
+2013-09-06 02:40:10 [ERROR] com.baidu.lbs.aois.Aois.main(Aois.java:72) : mysql的limit值不能小于或等于0 start:0,end:1000
+2013-09-06 02:48:06 [ERROR] com.baidu.lbs.aois.Aois.main(Aois.java:72) : mysql的limit值不能小于或等于0 start:0,end:1000
+2013-09-06 02:48:35 [ERROR] com.baidu.lbs.aois.Aois.main(Aois.java:72) : mysql的limit值不能小于或等于0 start:0,end:1000

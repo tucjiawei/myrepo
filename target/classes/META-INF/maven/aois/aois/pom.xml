@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>aois</groupId>
+	<artifactId>aois</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>aois</name>
+	<dependencies>
+		<dependency>
+			<groupId>com.baidu.lbs</groupId>
+			<artifactId>lbs-tools</artifactId>
+			<version>1.0.3-SNAPSHOT</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.13</version>
+		</dependency>
+	</dependencies>
+	
+	
+	<build>
+		<plugins>  
+            <plugin>  
+                <artifactId>maven-assembly-plugin</artifactId>  
+                <configuration>  
+                    <archive>  
+                        <manifest>  
+                            <mainClass>com.baidu.lbs.aois.Aois</mainClass>  
+                        </manifest>  
+                    </archive>  
+                    <descriptorRefs>  
+                        <descriptorRef>jar-with-dependencies</descriptorRef>  
+                    </descriptorRefs>  
+                </configuration>  
+            </plugin>
+   <!-- 打jar包时需要把配置文件给排除在外 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<configuration>
+							<classifier>lib</classifier>
+							<excludes>
+								<exclude>config.xml</exclude>
+								<exclude>log4j.xml</exclude>
+							</excludes>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+    
+        </plugins> 
+	</build>
+</project>
